@@ -1,0 +1,12 @@
+<h1>Mostrando articulo seleccionado </h1>
+
+<p>
+  Titulo: <%= @article.title %>
+</p>
+
+<p>
+  Descripición: <%= @article.description %>
+</p>
+
+<%= link_to "Editar este articulo", edit_article_path(@article) %> | 
+<%= link_to "Regresar a la lista de articulos", articles_path %>
