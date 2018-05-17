@@ -16,6 +16,7 @@
     <td><%= article.description %></td>
     <td><%= link_to "Editar", edit_article_path(article) %></td>
     <td><%= link_to "Mostrar", article_path(article) %></td>
+    <td> <%= link_to "Eliminar", article_path(article), method: :delete, data: { confirm: "¿Estas seguro de eliminar este atributo?" } %> </td>
   </tr>
   <% end %>
 
