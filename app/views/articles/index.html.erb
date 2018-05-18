@@ -1,23 +1,25 @@
-<h1>Listando todos los articulos</h1>
+<h1 aling="center" >Listando todos los articulos</h1>
 
 <p>
   <%= link_to "Crear un nuevo articulo", new_article_path %>
 </p>
 
-<table>
-  <tr>
-    <th>Titulo</th>
-    <th>Descripición</th>
-  </tr>
-
-  <% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.description %></td>
-    <td><%= link_to "Editar", edit_article_path(article) %></td>
-    <td><%= link_to "Mostrar", article_path(article) %></td>
-    <td> <%= link_to "Eliminar", article_path(article), method: :delete, data: { confirm: "¿Estas seguro de eliminar este atributo?" } %> </td>
-  </tr>
-  <% end %>
-
-</table>
+<% @articles.each do |article| %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="article-title">
+          <%= link_to article.title, article_path(article) %>
+        </div>
+        <div class="article-body">
+          <%= truncate(article.description, length: 100) %>
+        </div>
+        <div class="articles-actions">
+          <%= link_to "Editar este articulo", edit_article_path(article), class: "btn btn-xs btn-primary" %>
+          <%= link_to "Eliminar este articulo", article_path(article), method: :delete,
+                      data: { confirm: "¿Estas seguro de eliminar este atributo?" }, class: "btn btn-xs btn-danger" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
