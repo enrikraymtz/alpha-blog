@@ -1,8 +1,5 @@
-<h1 aling="center" >Listando todos los articulos</h1>
+<h1 align="center" >Listando todos los articulos</h1>
 
-<p>
-  <%= link_to "Crear un nuevo articulo", new_article_path %>
-</p>
 
 <% @articles.each do |article| %>
   <div class="row">
@@ -13,6 +10,12 @@
         </div>
         <div class="article-body">
           <%= truncate(article.description, length: 100) %>
+          <div class="article-meta-details">            
+            <small>Creado por <%= article.user.username if article.user %>,
+              <%= time_ago_in_words(article.created_at) %> hace,
+              last updated: <%= time_ago_in_words(article.updated_at) %> hace
+            </small>
+          </div>
         </div>
         <div class="articles-actions">
           <%= link_to "Editar este articulo", edit_article_path(article), class: "btn btn-xs btn-primary" %>
