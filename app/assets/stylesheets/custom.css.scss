@@ -44,7 +44,15 @@ $navbar-default-bg: black;
 .listing{
   list-style: none;
   padding-left: 0;
-  
+
+}
+
+.navbar-default .navbar-nav li a{
+  color: white;
+}
+
+.dropdown-menu li a {
+  color: black !important;
 }
 footer {
   margin-top: 45px;
