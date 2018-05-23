@@ -85,8 +85,10 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.2-x86-mingw32)
       mini_portile2 (~> 2.3.0)
+    passenger (5.3.1)
+      rack
+      rake (>= 0.8.1)
     pg (1.0.0-x86-mingw32)
-    puma (3.11.4)
     rack (2.0.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -173,8 +175,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
+  passenger
   pg
-  puma (~> 3.0)
   rails (~> 5.0.7)
   rails-controller-testing
   sass-rails (~> 5.0)
